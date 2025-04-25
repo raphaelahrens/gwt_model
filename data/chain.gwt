@@ -1,0 +1,53 @@
+WORKING_ON Understanding chains. Attacker has to climb 10 stages to reach their end goal. You can experience how the probabilities multiply. Break the chain by setting one to 0%. Popular chains include: Defense in depth approach. Cyber kill chain.
+
+GROUP Init
+  STEP Start at 0
+    THEN Attacker at level 0
+
+GROUP Climbing the ladder / mastering the chain
+  STEP 0 to 1
+    GIVEN Attacker at level 0
+    GIVEN Attacker can master level 0
+    THEN Attacker at level 1
+  STEP 1 to 2
+    GIVEN Attacker at level 1
+    GIVEN Attacker can master level 1
+    THEN Attacker at level 2
+  STEP 2 to 3
+    GIVEN Attacker at level 2
+    GIVEN Attacker can master level 2
+    THEN Attacker at level 3
+  STEP 3 to 4
+    GIVEN Attacker at level 3
+    GIVEN Attacker can master level 3
+    THEN Attacker at level 4
+  STEP 4 to 5
+    GIVEN Attacker at level 4
+    GIVEN Attacker can master level 4
+    THEN Attacker at level 5
+  STEP 5 to 6
+    GIVEN Attacker at level 5
+    GIVEN Attacker can master level 5
+    THEN Attacker at level 6
+  STEP 6 to 7
+    GIVEN Attacker at level 6
+    GIVEN Attacker can master level 6
+    THEN Attacker at level 7
+  STEP 7 to 8
+    GIVEN Attacker at level 7
+    GIVEN Attacker can master level 7
+    THEN Attacker at level 8
+  STEP 8 to 9
+    GIVEN Attacker at level 8
+    GIVEN Attacker can master level 8
+    THEN Attacker at level 9
+  STEP 9 to 10
+    GIVEN Attacker at level 9
+    GIVEN Attacker can master level 9
+    THEN Attacker at level 10
+
+GROUP final
+   STEP Attacker wins
+     GIVEN Attacker at level 10
+     THEN Attacker wins / eats all the tasty chocolate cake and there's nothing left for us
+

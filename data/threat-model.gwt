@@ -1,0 +1,58 @@
+WORKING_ON Made-up toy threat model. Attacker has 3 ways to overcome a login. Can then find and exploit an InApp SQL Injection vulnerability and steal all the data. Or can mess with the data in an admin interface that is only hidden, not authenticated.
+GROUP Account Takeover
+  STEP Successful brute force attack
+    GIVEN Brute-force attack ends successful
+    WHEN Attacker brute-forces the login
+    THEN Attacker knows valid credentials
+  STEP Credentials from client config
+    GIVEN Attacker has access to the client
+    GIVEN Credentials are stored at the client
+    WHEN Attacker steals credentials from client
+    THEN Attacker knows valid credentials
+  STEP Rogue insider
+    GIVEN Insider goes rogue
+    THEN Attacker knows valid credentials
+  STEP Credentials = User
+    GIVEN Attacker knows valid credentials
+    THEN Attacker can act as logged-in user
+GROUP InApp SQL Injection vulnerability
+  STEP Attacker finds InApp SQL Injection
+    GIVEN Attacker can act as logged-in user
+    GIVEN Attacker is clever and knows how to find SQL Injection
+    GIVEN InApp has SQL Injection vulnerability
+    WHEN Attacker finds InApp SQL Injection vulnerability
+    THEN Attacker knows SQL Injection SELECT vulnerability
+GROUP SQL Injection exploitation
+  STEP Schema from UNION SELECT
+    GIVEN Attacker knows SQL Injection SELECT vulnerability
+    GIVEN Database supports UNION
+    GIVEN Database supports schema access
+    WHEN Attacker reads schema with UNION SELECT SQL Injection attack
+    THEN Attacker knows SQL schema
+  STEP SQL Injection data leak
+    GIVEN Attacker knows SQL Injection SELECT vulnerability
+    GIVEN Database supports UNION
+    GIVEN Attacker knows SQL schema
+    WHEN Attacker exploits SQL Injection vulnerability and enumerates tables from known schema with UNION SELECT SQL Injection attack
+    THEN all data leaked
+GROUP Stupid open admin interface
+  STEP Attacker finds open admin interface
+    GIVEN Admin interface is only hidden, not authenticated (security by obscurity anti-pattern)
+    GIVEN Attacker finds admin interface
+    THEN Attacker has access to admin interface
+  STEP Admin attacker messes with the data
+    GIVEN Attacker has access to admin interface
+    WHEN Attacker messes with the data via admin interface
+    THEN all data is messed up
+GROUP Impact judgement
+  STEP bad data leak
+    GIVEN all data leaked
+    THEN bad things happened
+  STEP bad data mess
+    GIVEN all data is messed up
+    THEN bad things happened
+  STEP broke
+    GIVEN all data leaked
+    GIVEN media finds out about data leaks
+    GIVEN society gives a shit about data leaks
+    THEN vendor goes broke

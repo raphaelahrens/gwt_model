@@ -1,0 +1,10 @@
+[package]
+name = "parser"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+miette = { version = "7.5", features = ["fancy"] }
+winnow = { version = "0.7", features = ["unstable-recover"] }
+gwtlib = { path = "../gwtlib/"}
+thiserror = "2.0"

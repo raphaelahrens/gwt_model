@@ -1,0 +1,36 @@
+WORKING_ON Not getting wet in summer
+
+GROUP Resisting rogue child threat actors with water bombs
+
+  STEP Children armed with water bombs
+    GIVEN it is summer
+    GIVEN parents buy their children water bombs in summer
+    THEN children are armed with water bombs
+
+  STEP Both outside?
+    GIVEN I'm outside
+    GIVEN children are outside
+    THEN I'm close to the children
+
+  STEP Water bomb hits me
+    GIVEN children are armed with water bombs
+    GIVEN children choose me as their target
+    GIVEN I'm close to the children
+    GIVEN water bomb hits it's target
+    WHEN children's water bomb makes me wet
+    THEN I get wet
+
+GROUP Resisting rain
+
+  STEP Getting wet from rain
+    GIVEN I'm outside
+    GIVEN it rains
+    GIVEN I don't have an umbrella with me
+    WHEN rain makes me wet
+    THEN I get wet
+
+GROUP Impact judgement
+  STEP Hate getting wet?
+    GIVEN I get wet
+    GIVEN I hate getting wet
+    THEN I'm having a bad bad day
